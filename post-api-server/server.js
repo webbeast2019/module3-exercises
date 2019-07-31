@@ -3,13 +3,13 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-require('body-parser');
 
 const PORT = 4000;
 
-// Load data
-let nextId = 0;
 const posts = new Map();
+let nextId = 0;
+
+// Load and cache data and set nextId
 JSON.parse(fs.readFileSync(path.join(__dirname, './posts.json'))).forEach(post => {
   if (post.id && Number.isInteger(post.id)) {
     posts.set(post.id, post);
@@ -37,7 +37,7 @@ function configureServer() {
     if (post) {
       res.json(post);
     } else {
-      res.send(`Cannot find post with id=${id}`);
+      res.send(`Cannot find post with id=${req.params.id}`);
     }
   });
 
@@ -69,7 +69,7 @@ function configureServer() {
       posts.set(id, post);
       res.send(`Post with id=${id} has been updated`);
     } else {
-      res.send(`Cannot find post with id=${id}`);
+      res.send(`Cannot find post with id=${req.params.id}`);
     }
   });
 
@@ -79,7 +79,7 @@ function configureServer() {
     if (posts.delete(id)) {
       res.send(`Post with id=${id} has been deleted`);
     } else {
-      res.send(`Cannot find post with id=${id}`);
+      res.send(`Cannot find post with id=${req.params.id}`);
     }
   });
 
