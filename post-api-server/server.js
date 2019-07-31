@@ -66,10 +66,11 @@ app.put('/posts/:id', function (req, res) {
     }
     post.title = req.body.title;
     post.body = req.body.body;
+    fs.writeFileSync('./posts.json', JSON.stringify(posts));
     res.send(post);
 });
 
-app.all('*', function (req, res) {
+app.get('*', function (req, res) {
     res.redirect('/posts');
 });
 
