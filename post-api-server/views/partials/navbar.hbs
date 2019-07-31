@@ -1,0 +1,26 @@
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Express Posts</a>
+      <ul id="nav-mobile" class="right hide-on-small-and-down">      
+        {{#if isHome}}
+        <li class="active"><a href="/">Home page</a></li>
+        {{else}}
+        <li><a href="/">Home page</a></li>
+        {{/if}}
+
+        {{#if isPosts}}
+        <li class="active"><a href="/posts">Posts</a></li>
+        {{else}}
+        <li><a href="/posts">Posts</a></li>
+        {{/if}}
+
+        {{#if isAdd}}
+        <li class="active"><a href="/add">App post</a></li>
+        {{else}}
+        <li><a href="/add">App post</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+<h3>Add post</h3>
+
+<form action="/add" method="POST">
+  <div class="input-field">
+    <input id="title" name="title" type="text" class="validate" required>
+    <label for="title">Title</label>
+    <span class="helper-text" data-error="Type title"></span>
+  </div>
+  <div class="input-field ">
+    <textarea id="body" name="text" class="materialize-textarea" class="validate" required></textarea>
+    <label for="body">Post</label>
+    <span class="helper-text" data-error="Type text"></span>
+  </div>
+  <button class="btn btn-primary">Add post</button>
+</form>

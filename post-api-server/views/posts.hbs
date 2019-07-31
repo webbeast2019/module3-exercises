@@ -1,0 +1,19 @@
+<h3>Posts</h3>
+
+{{#if posts.length}}
+{{#each posts}}
+<div class="card grey lighten-5">
+  <div class="card-content black-text">
+    <span class="card-title">{{title}}</span>
+    <p>{{text}}</p>
+  </div>
+  <div class="card-action">
+    <a href="/posts/{{id}}">Read post</a>
+    <a href="/posts/{{id}}/edit?allow=true">Edit post</a>
+    <a href="/posts/{{id}}/delete?allow=true" class="red-text">Delete post</a>
+  </div>
+</div>
+{{/each}}
+{{else}}
+<p>No posts yet</p>
+{{/if}}

@@ -1,0 +1,16 @@
+<h4>{{title}}</h4>
+
+<form action="/posts/edit" method="POST">
+  <div class="input-field">
+    <input id="title" name="title" type="text" class="validate" required value="{{post.title}}">
+    <label for="title">Title</label>
+    <span class="helper-text" data-error="Type title"></span>
+  </div>
+  <div class="input-field ">
+    <textarea id="body" name="text" class="materialize-textarea" class="validate" required>{{post.text}}</textarea>
+    <label for="body">Post</label>
+    <span class="helper-text" data-error="Type text"></span>
+  </div>
+  <input type="hidden" id="{{post.id}}" name="id" value="{{post.id}}">
+  <button class="btn btn-primary">Edit post</button>
+</form>
