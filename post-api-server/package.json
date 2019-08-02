@@ -1,16 +1,15 @@
 {
-  "name": "post-api-server",
+  "name": "basic_server",
   "version": "1.0.0",
-  "description": "post-api-server based on jason placeholder",
-  "main": "server.js",
+  "description": "",
+  "main": "express_basic.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon error_handling.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
     "express": "^4.17.1"
   }
 }
